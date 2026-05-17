@@ -1,3 +1,3 @@
-jump button is z 
-mobile is tap
-espace a bug
+computer 
+jump is z (espace a bug after death)
+mobile coming soon
