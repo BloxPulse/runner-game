@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shadow Runner</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════
+       ÉCRAN : MENU PRINCIPAL
+  ═══════════════════════════════════════════ -->
+  <div id="screen-menu" class="screen active">
+    <div class="menu-content">
+      <h1 class="game-title">SHADOW<br><span>RUNNER</span></h1>
+      <p class="menu-sub">Un monstre te pourchasse. Ne t'arrête pas.</p>
+      <div class="hiscore-display">🏆 Meilleur score : <span id="menu-hiscore">0</span></div>
+      <button id="btn-start" class="btn-main">▶ JOUER</button>
+      <div class="controls-hint">
+        <span>⬆ / ESPACE = Sauter</span>
+        <span>⬇ = Glisser</span>
+        <span>Double-tap ⬆ = Double saut</span>
+      </div>
+    </div>
+    <canvas id="menu-bg-canvas"></canvas>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       ÉCRAN : JEU
+  ═══════════════════════════════════════════ -->
+  <div id="screen-game" class="screen">
+    <!-- HUD -->
+    <div id="hud">
+      <div class="hud-block">
+        <div class="hud-label">SCORE</div>
+        <div class="hud-value" id="hud-score">0</div>
+      </div>
+      <div class="hud-block hud-center">
+        <div class="hud-label">PIÈCES</div>
+        <div class="hud-value" id="hud-coins">🪙 0</div>
+      </div>
+      <div class="hud-block hud-right">
+        <div class="hud-label">VITESSE</div>
+        <div class="hud-value" id="hud-speed">1.0x</div>
+      </div>
+    </div>
+    <!-- Barre de danger : monstre -->
+    <div id="danger-bar-wrap">
+      <div id="danger-label">👹 MONSTRE</div>
+      <div id="danger-bar-track"><div id="danger-bar-fill"></div></div>
+    </div>
+    <!-- Canvas principal -->
+    <canvas id="game-canvas"></canvas>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       ÉCRAN : GAME OVER
+  ═══════════════════════════════════════════ -->
+  <div id="screen-gameover" class="screen">
+    <div class="go-content">
+      <div class="go-title">GAME OVER</div>
+      <div class="go-stats">
+        <div class="go-stat">
+          <div class="go-stat-label">Distance</div>
+          <div class="go-stat-value" id="go-score">0</div>
+        </div>
+        <div class="go-stat">
+          <div class="go-stat-label">Pièces</div>
+          <div class="go-stat-value" id="go-coins">0</div>
+        </div>
+        <div class="go-stat">
+          <div class="go-stat-label">Meilleur</div>
+          <div class="go-stat-value" id="go-best">0</div>
+        </div>
+      </div>
+      <button id="btn-replay" class="btn-main">↺ REJOUER</button>
+      <button id="btn-menu" class="btn-secondary">⌂ MENU</button>
+    </div>
+  </div>
+
+  <!-- Scripts séparés par module -->
+  <script src="js/config.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/renderer.js"></script>
+  <script src="js/parallax.js"></script>
+  <script src="js/player.js"></script>
+  <script src="js/monster.js"></script>
+  <script src="js/obstacles.js"></script>
+  <script src="js/coins.js"></script>
+  <script src="js/particles.js"></script>
+  <script src="js/hud.js"></script>
+  <script src="js/game.js"></script>
+</body>
+</html>
